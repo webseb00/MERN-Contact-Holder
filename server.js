@@ -7,7 +7,12 @@ const app = express();
 const dbURL = config.get('mongoURL');
 const port = process.env.PORT || 5000;
 
+const user = require('./routes/user');
+
 app.use(express.json());
+
+// routes
+app.use('/api/users', user);
 
 mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected!'))
