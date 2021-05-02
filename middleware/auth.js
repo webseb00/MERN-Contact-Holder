@@ -4,8 +4,8 @@ const config = require('config');
 module.exports = async function(req, res, next) {
   const jwtSecret = process.env.jwtSecretKey || config.get('jwtSecretKey');
 
-  const token = req.header['x-access-token'];
-
+  const token = req.header('x-access-token');
+  
   if(!token) {
     return res.status(401).json({ msg: 'No token provided, authorization denied!' });
   }
