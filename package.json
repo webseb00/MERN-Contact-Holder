@@ -5,7 +5,9 @@
   "author": "webseb00 <lordow91@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon server.js"
+    "dev:server": "nodemon server.js",
+    "dev:client": "yarn --cwd ./client start",
+    "start": "npm-run-all --parallel dev:*"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
