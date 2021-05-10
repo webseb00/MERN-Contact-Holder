@@ -8,6 +8,8 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Navbar from './components/layout/Navbar';
 import Alerts from './components/layout/Alerts';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 const App = () => {
   return (
@@ -16,10 +18,13 @@ const App = () => {
         <AlertState>
           <Router>
             <Navbar />
+            <Alerts />
             <div className="container">
               <Switch>
                 <PrivateRoute exact path="/" component={Home} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
               </Switch>
             </div>
           </Router>

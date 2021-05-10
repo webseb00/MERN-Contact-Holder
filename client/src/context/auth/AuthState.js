@@ -72,14 +72,14 @@ export const AuthState = props => {
   const login = async formData => {
     const config = {
       headers: {
-        'Config-Type': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
 
     try {
 
-      const res = await axios.post('/api/users', formData, config);
-
+      const res = await axios.post('/api/auth', formData, config);
+      console.log(res);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
