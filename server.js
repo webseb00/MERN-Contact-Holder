@@ -4,7 +4,7 @@ const config  = require('config');
 const path = require('path');
 
 const app = express();
-const dbURL = config.get('mongoURL');
+const dbURL = process.env.mongoURL || config.get('mongoURL');
 const port = process.env.PORT || 5000;
 
 const user = require('./routes/user');
