@@ -49,7 +49,7 @@ router.post('/', [
 
     const contact = await newContact.save();
 
-    res.status(200).json({ msg: contact });
+    res.status(200).json(contact);
 
   } catch(err) {
     console.log(err.message);
@@ -82,9 +82,9 @@ router.put('/:id', auth, async (req, res) => {
       return res.status(401).json({ msg: "Not authorized!" });
     }
 
-    contact = await Contact.findByIdAndIpdate(
+    contact = await Contact.findByIdAndUpdate(
       req.params.id,
-      { $set: { contactFields } },
+      { $set: contactFields },
       { new: true }
     );
 

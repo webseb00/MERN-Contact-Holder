@@ -12,7 +12,7 @@ import {
 } from '../types';
 
 export default (state, action) => {
-  switch(action.payload) {
+  switch(action.type) {
     case GET_CONTACTS:
       return {
         ...state,

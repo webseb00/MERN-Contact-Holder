@@ -1,14 +1,20 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../context/auth/AuthState';
+import React from 'react';
+import Contacts from '../contacts/Contacts';
+import ContactForm from '../contacts/ContactForm';
+import ContactFilter from '../contacts/ContactFilter';
 
 const Home = () => {
 
-  const value = useContext(AuthContext);
-  console.log(value);
-
-
   return (
-    <h1>Home component</h1>
+    <div className="grid-2">
+      <div>
+        <ContactForm />
+      </div>
+      <div>
+        <ContactFilter />
+        <Contacts />
+      </div>
+    </div>
   )
 };
 
